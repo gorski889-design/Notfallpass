@@ -59,6 +59,81 @@
             font-weight: 400;
             transition: background 0.3s ease, color 0.3s ease;
         }
+/* More Contacts Button */
+.contacts-toggle {
+    width: 100%;
+    padding: 14px 18px;
+    margin-top: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+}
+
+.contacts-toggle:active {
+    transform: scale(0.98);
+    background: var(--bg-subtle);
+}
+
+.contacts-toggle .arrow {
+    transition: transform 0.3s ease;
+}
+
+.contacts-toggle.open .arrow {
+    transform: rotate(180deg);
+}
+
+.contacts-list {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.contacts-list.visible {
+    display: flex;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.contact-item:active {
+    transform: scale(0.98);
+    background: var(--bg-subtle);
+}
+
+.contact-item .name {
+    font-weight: 500;
+}
+
+.contact-item .phone {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.contact-item .call-icon {
+    font-size: 1.2rem;
+}
 
         /* ==================== SPLASH SCREEN ==================== */
         .splash-screen {
