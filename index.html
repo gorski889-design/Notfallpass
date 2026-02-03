@@ -816,6 +816,48 @@
                     Call Sophie
                 </a>
             </div>
+
+<button class="contacts-toggle" onclick="toggleContacts()">
+    <span>👥</span> More Contacts <span class="arrow">▼</span>
+</button>
+
+<div class="contacts-list" id="contactsList">
+    <a href="tel:+491622714272" class="contact-item">
+        <div>
+            <div class="name">Florian</div>
+            <div class="phone">+49 162 2714272</div>
+        </div>
+        <span class="call-icon">📞</span>
+    </a>
+    <a href="tel:+41791542190" class="contact-item">
+        <div>
+            <div class="name">Ansu</div>
+            <div class="phone">+41 79 154 21 90</div>
+        </div>
+        <span class="call-icon">📞</span>
+    </a>
+    <a href="tel:+447770758915" class="contact-item">
+        <div>
+            <div class="name">Ben</div>
+            <div class="phone">+44 7770 758915</div>
+        </div>
+        <span class="call-icon">📞</span>
+    </a>
+    <a href="tel:+447483851859" class="contact-item">
+        <div>
+            <div class="name">Joe</div>
+            <div class="phone">+44 7483 851859</div>
+        </div>
+        <span class="call-icon">📞</span>
+    </a>
+    <a href="tel:+447436065758" class="contact-item">
+        <div>
+            <div class="name">James</div>
+            <div class="phone">+44 7436 065758</div>
+        </div>
+        <span class="call-icon">📞</span>
+    </a>
+</div>
         </section>
 
         <!-- Rules -->
@@ -1215,6 +1257,12 @@
             document.getElementById('chill-tab').classList.add('visible');
         }
     }
+function toggleContacts() {
+    const list = document.getElementById('contactsList');
+    const btn = document.querySelector('.contacts-toggle');
+    list.classList.toggle('visible');
+    btn.classList.toggle('open');
+}
 
     window.addEventListener('offline', showFallbackMap);
     
