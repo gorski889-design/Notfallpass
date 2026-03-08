@@ -433,6 +433,29 @@
     .phrase-card .german { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: var(--text-primary); margin-bottom: 6px; }
     .phrase-card .english { font-size: 0.72rem; color: var(--text-muted); }
 
+    /* Gym page */
+    .gym-hero {
+      width: 100%; height: 200px; border-radius: 20px;
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px; overflow: hidden; position: relative;
+    }
+    .gym-hero-text {
+      color: white; text-align: center; z-index: 1;
+    }
+    .gym-hero-text h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 500; letter-spacing: 0.08em; }
+    .gym-hero-text p { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.8; margin-top: 4px; }
+    .gym-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: var(--shadow-sm);
+    }
+    .gym-card h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .gym-hours-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 0.83rem; border-bottom: 1px solid var(--border); }
+    .gym-hours-row:last-child { border-bottom: none; }
+    .gym-hours-row .day { font-weight: 500; }
+    .gym-hours-row .time { color: var(--text-secondary); }
+    .gym-rating { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--accent); font-weight: 600; }
+
     /* Footer */
     .footer { text-align: center; padding: 28px 0 16px; }
     .footer-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
@@ -462,7 +485,7 @@
     <p class="splash-subtitle">Carnival Survival Guide</p>
     <!-- ← PASTE DÜSSELDORF SKYLINE IMAGE BELOW (replace the src="") -->
     <div class="splash-skyline">
-      <img src="https://as1.ftcdn.net/jpg/01/70/48/54/1000_F_170485408_36T6F9KHDMaki6UPDW2JxUsMPerG281w.jpg" alt="Düsseldorf Skyline" alt="Düsseldorf Skyline" onerror="this.style.display='none';">
+      <img src="" alt="Düsseldorf Skyline" onerror="this.style.display='none';">
     </div>
     <button class="enter-btn" onclick="enterApp()">Enter</button>
     <p class="splash-hint">Your emergency guide for carnival nights</p>
@@ -476,6 +499,10 @@
   <div class="nav-item active" onclick="navigateTo('home')">
     <span class="nav-icon">🏠</span>
     <div><div class="nav-label">Home</div><div class="nav-desc">Map, places & essentials</div></div>
+  </div>
+  <div class="nav-item" onclick="navigateTo('gym')">
+    <span class="nav-icon">💪</span>
+    <div><div class="nav-label">Gym</div><div class="nav-desc">Fit Cosmo Gerresheim</div></div>
   </div>
   <div class="nav-item" onclick="navigateTo('webcam')">
     <span class="nav-icon">📹</span>
@@ -525,28 +552,28 @@
 
       <!-- Main CTA -->
       <section class="main-cta">
-        <a href="uber://?action=setPickup&pickup=my_location&dropoff[latitude]=51.312718&dropoff[longitude]=6.822258&dropoff[nickname]=Home" class="home-btn">
+        <a href="uber://?action=setPickup&pickup=my_location&dropoff[latitude]=51.24417&dropoff[longitude]=6.79471&dropoff[nickname]=FOM+Hochschule" class="home-btn">
           <span class="icon">🏠</span>
           Take Me Home (Uber)
           <span class="sublabel">Opens Uber · One tap</span>
         </a>
         <div class="secondary-row">
-          <a href="https://www.google.com/maps/dir/?api=1&destination=Heinrichstraße+1,+40880+Ratingen" class="sec-btn">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Toulouser+Allee+53,+40476+Düsseldorf" class="sec-btn">
             <span class="icon">📍</span> Google Maps
           </a>
-          <a href="tel:+4917662172140" class="sec-btn">
-            <span class="icon">📞</span> Call Sophie
+          <a href="tel:+4920181004100" class="sec-btn">
+            <span class="icon">📞</span> Call FOM
           </a>
         </div>
         <button class="contacts-toggle" onclick="toggleContacts()">
           <span>👥</span> More Contacts <span class="arrow">▼</span>
         </button>
         <div class="contacts-list" id="contactsList">
-          <a href="tel:+491622714272" class="contact-item"><div><div class="name">Florian</div><div class="phone">+49 162 271 4272</div></div><span class="call-icon">📞</span></a>
-          <a href="tel:+41791542190" class="contact-item"><div><div class="name">Ansu</div><div class="phone">+41 79 154 21 90</div></div><span class="call-icon">📞</span></a>
-          <a href="tel:+447770758915" class="contact-item"><div><div class="name">Ben</div><div class="phone">+44 7770 758915</div></div><span class="call-icon">📞</span></a>
-          <a href="tel:+447483851859" class="contact-item"><div><div class="name">Joe</div><div class="phone">+44 7483 851859</div></div><span class="call-icon">📞</span></a>
-          <a href="tel:+447436065758" class="contact-item"><div><div class="name">James</div><div class="phone">+44 7436 065758</div></div><span class="call-icon">📞</span></a>
+          <a href="tel:+491234567801" class="contact-item"><div><div class="name">Sophie</div><div class="phone">+49 123 4567801</div></div><span class="call-icon">📞</span></a>
+          <a href="tel:+491234567802" class="contact-item"><div><div class="name">Ansu</div><div class="phone">+49 123 4567802</div></div><span class="call-icon">📞</span></a>
+          <a href="tel:+491234567803" class="contact-item"><div><div class="name">Ben</div><div class="phone">+49 123 4567803</div></div><span class="call-icon">📞</span></a>
+          <a href="tel:+491234567804" class="contact-item"><div><div class="name">Joe</div><div class="phone">+49 123 4567804</div></div><span class="call-icon">📞</span></a>
+          <a href="tel:+491234567805" class="contact-item"><div><div class="name">James</div><div class="phone">+49 123 4567805</div></div><span class="call-icon">📞</span></a>
         </div>
         <button class="contacts-toggle" onclick="shareLocation(event)" style="margin-top:8px;">
           <span>📡</span> Share My Location
@@ -645,10 +672,53 @@
 
       <!-- Footer -->
       <footer class="footer">
-        <p class="footer-label">Sophie's Place</p>
-        <p class="footer-address">Heinrichstraße 1<br>40880 Ratingen</p>
-        <p class="footer-phone"><a href="tel:+4917662172140">+49 176 621 72140</a></p>
+        <p class="footer-label">FOM Hochschule</p>
+        <p class="footer-address">Toulouser Allee 53<br>40476 Düsseldorf</p>
+        <p class="footer-phone"><a href="tel:+4920181004100">+49 201 81004 100</a></p>
       </footer>
+    </div>
+
+    <!-- ==================== GYM PAGE ==================== -->
+    <div class="page" id="page-gym">
+      <div class="gym-hero">
+        <div class="gym-hero-text">
+          <h2>FIT COSMO</h2>
+          <p>Düsseldorf Gerresheim</p>
+        </div>
+      </div>
+
+      <div class="gym-rating" style="margin-bottom:16px;">
+        ⭐ 4.6 <span style="color:var(--text-muted); font-weight:400; font-size:0.8rem;">· 176 reviews</span>
+      </div>
+
+      <div class="gym-card">
+        <h3>📍 Address</h3>
+        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:12px;">
+          Diepenstraße 83, 40625 Düsseldorf<br>
+          <span style="font-size:0.75rem; color:var(--text-muted);">Located in COSMO SPORTS</span>
+        </p>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Diepenstraße+83,+40625+Düsseldorf" class="detail-nav-btn" target="_blank">📍 Open in Google Maps</a>
+      </div>
+
+      <div class="gym-card">
+        <h3>🕐 Gym Hours</h3>
+        <div class="gym-hours-row"><span class="day">Mon – Fri</span><span class="time">07:00 – 22:30</span></div>
+        <div class="gym-hours-row"><span class="day">Sat, Sun & Holidays</span><span class="time">08:00 – 21:00</span></div>
+      </div>
+
+      <div class="gym-card">
+        <h3>🧖 Sauna Hours</h3>
+        <div class="gym-hours-row"><span class="day">Mon – Thu</span><span class="time">09:00 – 14:00</span></div>
+        <div class="gym-hours-row"><span class="day">Mon, Wed – Fri</span><span class="time">15:00 – 21:30</span></div>
+        <div class="gym-hours-row"><span class="day">Sat – Sun</span><span class="time">10:00 – 20:00</span></div>
+      </div>
+
+      <div class="info-box">
+        <ul>
+          <li><span class="dot"></span>Sauna included in membership</li>
+          <li><span class="dot"></span>Part of COSMO SPORTS GmbH</li>
+        </ul>
+      </div>
     </div>
 
     <!-- ==================== WEBCAM PAGE ==================== -->
@@ -679,17 +749,7 @@
           <p>HD Live Webcam at the Rhine waterfront — tap to watch</p>
         </div>
       </a>
-      
-<a href="https://www.duesseldorf.de/webcams/marktplatz-1" target="_blank" class="webcam-card">
-  <div class="webcam-preview">
-    🏛️
-    <span class="live-badge">● LIVE</span>
-  </div>
-  <div class="webcam-info">
-    <h4>Marktplatz · Rathaus</h4>
-    <p>Live view of Marktplatz & Jan Wellem statue — tap to watch</p>
-  </div>
-</a>
+
       <div class="info-box">
         <ul>
           <li><span class="dot"></span>Check crowd levels before heading out</li>
